@@ -1,3 +1,10 @@
+/**
+ * 
+ * For information on usage and redistribution, and for a DISCLAIMER OF ALL
+ * WARRANTIES, see the file, "LICENSE.txt," in this distribution.
+ * 
+ */
+
 package com.noisepages.nettoyeur;
 
 
@@ -17,6 +24,11 @@ import com.noisepages.nettoyeur.jack.JackException;
 import com.noisepages.nettoyeur.jack.JackNativeClient;
 
 
+/**
+ * Basic pd/jack library for Processing.
+ * 
+ * @author Peter Brinkmann (peter.brinkmann@gmail.com)
+ */
 public class PureDataP5 implements PdReceiver {
 
 	private final PApplet parent;
@@ -39,9 +51,11 @@ public class PureDataP5 implements PdReceiver {
 		receiveSymbolCallback = methods.get("receiveSymbol");
 		receiveListCallback = methods.get("receiveList");
 		receiveMessageCallback = methods.get("receiveMessage");
+		// The next few lines look questionable from a Java point of view, but since we're writing
+		// a library for processing we just go ahead and suppress exceptions.
 		PdJackProcessor proc = null;
 		try {
-			proc = new PdJackProcessor(nIn, nOut);
+			proc = PdJackProcessor.createPdJackProcessor(nIn, nOut);
 		} catch (JackException e) {
 			System.err.println("WARNING: unable to create pd processor");
 			e.printStackTrace();
@@ -201,4 +215,3 @@ public class PureDataP5 implements PdReceiver {
 		// Do nothing.
 	}
 }
-
