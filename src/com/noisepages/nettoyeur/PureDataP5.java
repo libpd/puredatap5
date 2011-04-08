@@ -191,6 +191,18 @@ public class PureDataP5 implements PdReceiver {
 		PdBase.closePatch(handle);
 	}
 
+	public int arraySize(String name) {
+		return PdBase.arraySize(name);
+	}
+	
+	public int readArray(float[] to, int toOffset, String fromArray, int fromOffset, int n) {
+		return PdBase.readArray(to, toOffset, fromArray, fromOffset, n);
+	}
+	
+	public int writeArray(String toArray, int toOffset, float[] fromArray, int fromOffset, int n) {
+		return PdBase.writeArray(toArray, toOffset, fromArray, fromOffset, n);
+	}
+	
 	public void sendBang(String recv) {
 		PdBase.sendBang(recv);
 	}
