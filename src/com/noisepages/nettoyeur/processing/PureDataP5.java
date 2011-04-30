@@ -222,8 +222,4 @@ public class PureDataP5 implements PdReceiver {
 	public void sendMessage(String recv, String mesg, Object... args) {
 		PdBase.sendMessage(recv, mesg, args);
 	}
-
-	public static void main(String[] args) {
-		// Do nothing.
-	}
 }
