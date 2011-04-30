@@ -5,7 +5,7 @@
  * 
  */
 
-package com.noisepages.nettoyeur;
+package com.noisepages.nettoyeur.processing;
 
 
 import java.io.File;
