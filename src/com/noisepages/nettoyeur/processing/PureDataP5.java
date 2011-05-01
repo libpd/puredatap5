@@ -68,11 +68,7 @@ public class PureDataP5 implements PdReceiver {
 	}
 
 	public void start()  {
-		try {
 		start(null, null);
-		} catch (Exception e) {
-			System.out.println("WARNING: unable to connect to JACK");
-		}
 	}
 
 	public void start(String source, String sink) {
