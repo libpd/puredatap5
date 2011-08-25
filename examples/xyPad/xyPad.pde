@@ -10,6 +10,7 @@ void setup() {
   colorMode(HSB, 100, 100, 100);
   pd = new PureDataP5Jack(this, 1, 2, "system", "system");
   pd.openPatch(dataFile("sawdrone5.pd"));
+  pd.subscribe("timeSymbol");
   pd.start();
 }
 
@@ -34,6 +35,10 @@ void mouseReleased() {
 
 void mouseDragged() {
  dispatchPad();
+}
+
+void receiveFloat(String s, float x) {
+  println(s + ": " + x);
 }
 
 void dispatchPad() {

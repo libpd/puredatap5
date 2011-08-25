@@ -2,7 +2,7 @@
 #X declare -path rj;
 #X declare -path starter;
 #X obj -1 64 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 95 256;
+-262144 -1 -1 0 256;
 #X obj -3 232 *~ 0.5;
 #X obj -3 328 dac~;
 #X obj -3 298 +~;
@@ -89,12 +89,16 @@ dry 0 \, delay 500;
 #X msg 146 127 0.5 200;
 #X obj 59 155 r cutoff;
 #X obj 80 134 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 2482 256;
+-262144 -1 -1 0 256;
 #X obj 155 191 r rez;
 #X obj 0 183 e_resonzq 2000 1 1;
 #X obj 143 235 line;
 #X msg 142 213 \$1 1000;
 #X obj 57 265 rev3~ 100 92 3000 40;
+#X obj 345 76 loadbang;
+#X obj 345 102 metro 500;
+#X obj 305 102 timer;
+#X obj 304 130 s timeSymbol;
 #X connect 0 0 10 0;
 #X connect 0 0 8 0;
 #X connect 0 0 9 0;
@@ -126,3 +130,7 @@ dry 0 \, delay 500;
 #X connect 26 0 25 0;
 #X connect 27 0 3 1;
 #X connect 27 1 4 1;
+#X connect 28 0 29 0;
+#X connect 28 0 30 0;
+#X connect 29 0 30 1;
+#X connect 30 0 31 0;
