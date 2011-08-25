@@ -28,15 +28,30 @@ public class PureDataP5Jack extends PureDataP5Base {
 	private final PdJackProcessor processor;
 	private final String source, sink;
 
+	/**
+	 * Constructor.
+	 * 
+	 * @param parent owning instance of PApplet
+	 * @param nIn desired number of input channels
+	 * @param nOut desired number of output channels
+	 */
 	public PureDataP5Jack(PApplet parent, int nIn, int nOut) {
 		this(parent, nIn, nOut, null, null);
 	}
 	
+	/**
+	 * Constructor.
+	 * 
+	 * @param parent owning instance of PApplet
+	 * @param nIn desired number of input channels
+	 * @param nOut desired number of output channels
+	 * @param source name of JACK client to connect inputs to
+	 * @param sink name of JACK client to connect outputs to
+	 */
 	public PureDataP5Jack(PApplet parent, int nIn, int nOut, String source, String sink) {
 		super(parent);
 		this.source = source;
 		this.sink = sink;
-		parent.registerDispose(this);
 		try {
 			processor = PdJackProcessor.createPdJackProcessor(nIn, nOut);
 		} catch (JackException e) {
