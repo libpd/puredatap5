@@ -24,7 +24,7 @@ import processing.core.PApplet;
  * 
  * @author Peter Brinkmann (peter.brinkmann@gmail.com)
  */
-public class PureDataP5 implements PdReceiver {
+public class PureData implements PdReceiver {
 
 	private final PApplet parent;
 	private final Method pdPrintCallback;
@@ -40,7 +40,7 @@ public class PureDataP5 implements PdReceiver {
 	 * @param int inputChannels  number of input channels
 	 * @param int outputChannels number of output channels
 	 */
-	public PureDataP5(PApplet parent, int sampleRate, int inputChannels, int outputChannels) {
+	public PureData(PApplet parent, int sampleRate, int inputChannels, int outputChannels) {
 		this.parent = parent;
 		parent.registerDispose(this);
 		if (!PdBase.implementsAudio()) {

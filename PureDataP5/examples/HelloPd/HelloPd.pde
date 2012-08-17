@@ -6,12 +6,12 @@
  * @author Peter Brinkmann (peter.brinkmann@gmail.com)
  */
 
-import org.puredata.processing.PureDataP5;
+import org.puredata.processing.PureData;
 
-PureDataP5 pd;
+PureData pd;
 
 public void setup() {
-  pd = new PureDataP5(this, 44100, 0, 2);
+  pd = new PureData(this, 44100, 0, 2);
   pd.openPatch("test.pd");
   // pd.subscribe("foo");  // Uncomment if you want to receive messages sent to the receive symbol "foo" in Pd.
   pd.start();
