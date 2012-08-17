@@ -1,3 +1,11 @@
+/**
+ * A sample Processing applet using libpd, illustrating all major features.
+ * 
+ * Based on RJ Marsan's YayProcessingPD (https://github.com/rjmarsan/YayProcessingPD).
+ * 
+ * @author Peter Brinkmann (peter.brinkmann@gmail.com)
+ */
+
 import org.puredata.processing.PureDataP5;
 
 PureDataP5 pd;
