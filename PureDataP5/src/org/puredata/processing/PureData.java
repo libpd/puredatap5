@@ -51,6 +51,8 @@ public class PureData implements PdReceiver {
 		}
 		PdBase.setReceiver(this);
 		PdBase.computeAudio(true);
+		PdBase.clearSearchPath();
+		PdBase.addToSearchPath(parent.dataPath(""));
 		Map<String, Method> methods = extractMethods(parent.getClass());
 		pdPrintCallback = methods.get("pdPrint");
 		receiveBangCallback = methods.get("receiveBang");
