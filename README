@@ -1,8 +1,8 @@
 Tentative Processing support for libpd
 
-This revision is brand new and largely untested, and the included binaries are
-currently for Mac OS only (we're hoping to fix that soon); proceed at your own
-risk.
+This revision is brand new and largely untested; proceed at your own risk. The
+packaged binaries are currently for Mac and Linux only, and the Linux binaries
+may be wonky for now.
 
 The directory PureDataP5 contains the source code and dependencies, configured
 for development on Mac OS. You won't need to look at this unless you want to
