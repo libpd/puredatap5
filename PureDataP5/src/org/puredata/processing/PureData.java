@@ -43,6 +43,7 @@ public class PureData implements PdReceiver {
 	public PureData(PApplet parent, int sampleRate, int inputChannels, int outputChannels) {
 		this.parent = parent;
 		parent.registerDispose(this);
+		parent.registerPre(this);
 		if (!PdBase.implementsAudio()) {
 			throw new RuntimeException("PdBase does not implement audio!");
 		}
@@ -77,6 +78,13 @@ public class PureData implements PdReceiver {
 	public void dispose() {
 		stop();
 		PdBase.release();
+	}
+	
+	/**
+	 * Processing pre-draw callback, automatically registered in the constructor.
+	 */
+	public void pre() {
+		PdBase.pollMessageQueue();
 	}
 	
 	/**

@@ -31,6 +31,9 @@ public void draw() {
 // Implement methods like the following if you want to receive messages from Pd.
 // You'll also need to subscribe to receive symbols you're interested if you want
 // to receive messages.
+//
+// Note that invocations of these methods will occur before the draw method, and
+// so you can't use any graphics commands in here.
 
 public void pdPrint(String s) {
   // Handle string s, printed by Pd
