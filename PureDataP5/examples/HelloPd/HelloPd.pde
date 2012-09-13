@@ -10,14 +10,14 @@ import org.puredata.processing.PureData;
 
 PureData pd;
 
-public void setup() {
+void setup() {
   pd = new PureData(this, 44100, 0, 2);
   pd.openPatch("test.pd");
   // pd.subscribe("foo");  // Uncomment if you want to receive messages sent to the receive symbol "foo" in Pd.
   pd.start();
 }
 
-public void draw() {
+void draw() {
   background(0);
   fill(200, 0, 0);
   stroke(255, 0, 0);
@@ -35,19 +35,19 @@ public void draw() {
 // Note that invocations of these methods will occur before the draw method, and
 // so you can't use any graphics commands in here.
 
-public void pdPrint(String s) {
+void pdPrint(String s) {
   // Handle string s, printed by Pd
 }
 
-public void receiveBang(String source) {
+void receiveBang(String source) {
   // Handle bang sent to symbol source in Pd
 }
 
-public void receiveFloat(String source, float x) {
+void receiveFloat(String source, float x) {
   // Handle float x sent to symbol source in Pd
 }
 
-public void receiveSymbol(String source, String sym) {
+void receiveSymbol(String source, String sym) {
   // Handle symbol sym sent to symbol source in Pd
 }
 */
