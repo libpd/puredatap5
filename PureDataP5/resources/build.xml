@@ -172,7 +172,7 @@ ${line}
   			<fileset dir="${project.src}"/>
 	  	</copy>
 	  	<copy todir="${project.tmp}/${project.name}/${folder}">
-  			<fileset dir="${project.lib}" excludes="README" />
+  			<fileset dir="${project.lib}" excludes="README,processing-core-1.5.1.jar"/>
 	  	</copy>
 	</target>
 	
@@ -210,6 +210,7 @@ ${line}
 	
 	<target name="generate.javadoc" if="is.normal">
 	  	<!-- create the java reference of the library -->
+                <!-- todo:  the classpath reference used here is incorrect -->
 		<javadoc bottom="Processing library ${project.name} by ${author.name}. ${library.copyright}" 
 				classpath="${classpath.local.location}/core.jar;{project.bin}" 
 				destdir="${project.tmp}/${project.name}/reference" 
