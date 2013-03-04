@@ -84,7 +84,7 @@ public class PureData implements PdReceiver {
 	 * Processing pre-draw callback, automatically registered in the constructor.
 	 */
 	public void pre() {
-		PdBase.pollMessageQueue();
+		PdBase.pollPdMessageQueue();
 	}
 	
 	/**
