@@ -36,9 +36,9 @@ public class PureData implements PdReceiver {
 
 	/**
 	 * @param parent             owner
-	 * @param int sampleRate     sample rate
-	 * @param int inputChannels  number of input channels
-	 * @param int outputChannels number of output channels
+	 * @param sampleRate     sample rate
+	 * @param inputChannels  number of input channels
+	 * @param outputChannels number of output channels
 	 */
 	public PureData(PApplet parent, int sampleRate, int inputChannels, int outputChannels) {
 		this.parent = parent;
@@ -84,7 +84,7 @@ public class PureData implements PdReceiver {
 	 * Processing pre-draw callback, automatically registered in the constructor.
 	 */
 	public void pre() {
-		PdBase.pollMessageQueue();
+		PdBase.pollPdMessageQueue();
 	}
 	
 	/**
