@@ -45,9 +45,9 @@ public class PureData implements PdReceiver, PdMidiReceiver {
 
 	/**
 	 * @param parent             owner
-	 * @param int sampleRate     sample rate
-	 * @param int inputChannels  number of input channels
-	 * @param int outputChannels number of output channels
+	 * @param sampleRate     sample rate
+	 * @param inputChannels  number of input channels
+	 * @param outputChannels number of output channels
 	 */
 	public PureData(PApplet parent, int sampleRate, int inputChannels, int outputChannels) {
 		this.parent = parent;
