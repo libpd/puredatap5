@@ -1,14 +1,14 @@
-Tentative Processing support for libpd
+An attemp of a libpd Processing implementation
 
 This revision is brand new and largely untested; proceed at your own risk. The
 packaged binaries are currently for Mac and Linux only, and the Linux binaries
-may be wonky for now.
+may turn out to be unstable.
 
 The directory PureDataP5 contains the source code and dependencies, configured
 for development on Mac OS. You won't need to look at this unless you want to
 participate in the development of this library.
 
 If you just want to use libpd with Processing, then you can unpack the file
-pdp5.zip into the libraries folder of Processing. On my Mac, that folder is
-Documents/Processing/libraries.
+pdp5.zip into the libraries folder of Processing. For Mac users the sketchbook 
+folder is located inside ~/Documents/Processing
 
