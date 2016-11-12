@@ -11,6 +11,8 @@ import org.puredata.processing.PureData;
 PureData pd;
 
 void setup() {
+  fullScreen();
+  ellipseMode(CENTER);
   pd = new PureData(this, 44100, 0, 2);
   pd.openPatch("test.pd");
   // pd.subscribe("foo");  // Uncomment if you want to receive messages sent to the receive symbol "foo" in Pd.
@@ -19,9 +21,6 @@ void setup() {
 
 void draw() {
   background(0);
-  fill(200, 0, 0);
-  stroke(255, 0, 0);
-  ellipseMode(CENTER);
   ellipse(mouseX, mouseY, 20, 20);
   pd.sendFloat("pitch", (float)mouseX / (float)width); // Send float message to symbol "pitch" in Pd.
   pd.sendFloat("volume", (float)mouseY / (float)height);
