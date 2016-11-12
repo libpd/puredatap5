@@ -13,6 +13,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.puredata.core.PdBase;
 import org.puredata.core.PdMidiReceiver;
 import org.puredata.core.PdReceiver;
@@ -139,6 +141,26 @@ public class PureData implements PdReceiver, PdMidiReceiver {
   public int openPatch(String file) {
     try {
       return PdBase.openPatch(parent.dataPath(file));
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public int unpackAndOpenPatch(String archive, String patch) {
+    TarArchiveInputStream tar = new TarArchiveInputStream(parent.createInput(archive));
+    try {
+      TarArchiveEntry entry;
+      while ((entry = tar.getNextTarEntry()) != null) {
+        int n = (int)entry.getSize();
+        byte[] content = new byte[n];
+        int m = 0;
+        while (n > m) {
+          m += tar.read(content, m, n - m);
+        }
+        parent.saveBytes(entry.getName(), content);
+      }
+      tar.close();
+      return PdBase.openPatch(parent.savePath(patch));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

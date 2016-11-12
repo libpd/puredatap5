@@ -14,7 +14,7 @@ void setup() {
   fullScreen();
   ellipseMode(CENTER);
   pd = new PureData(this, 44100, 0, 2);
-  pd.openPatch("test.pd");
+  pd.unpackAndOpenPatch("test.tar", "test.pd");
   // pd.subscribe("foo");  // Uncomment if you want to receive messages sent to the receive symbol "foo" in Pd.
   pd.start();
 }

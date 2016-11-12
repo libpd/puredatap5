@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="/Applications/Processing.app/Contents/Java/core/library/core.jar"/>
 	<classpathentry kind="lib" path="pdp5/lib/libpd.jar"/>
+	<classpathentry kind="lib" path="pdp5/lib/commons-compress-1.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
