@@ -137,10 +137,8 @@ public class PureData implements PdReceiver, PdMidiReceiver {
    * Delegates to the corresponding method in {@link PdBase}.
    */
   public int openPatch(String file) {
-    final String tmpFile = "__tmp__" + file;
-    parent.saveBytes(tmpFile, parent.loadBytes(file));
     try {
-      return PdBase.openPatch(parent.savePath(tmpFile));
+      return PdBase.openPatch(parent.dataPath(file));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
