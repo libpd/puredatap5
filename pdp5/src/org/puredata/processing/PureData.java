@@ -146,8 +146,13 @@ public class PureData implements PdReceiver, PdMidiReceiver {
     }
   }
 
+  /**
+   * Unpacks a flat tar archive (just files, no directories) containing a patch
+   * and auxiliary files and opens the patch.
+   */
   public int unpackAndOpenPatch(String archive, String patch) {
-    TarArchiveInputStream tar = new TarArchiveInputStream(parent.createInput(archive));
+    TarArchiveInputStream tar =
+        new TarArchiveInputStream(parent.createInput(archive));
     try {
       TarArchiveEntry entry;
       while ((entry = tar.getNextTarEntry()) != null) {
